@@ -1,23 +1,312 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Wej-Dh-QMr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="4">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="main.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Jju-dG-bfH"/>
+                            <imageView contentMode="scaleToFill" image="enter.png" translatesAutoresizingMaskIntoConstraints="NO" id="cA0-SW-iPl">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="uAe-Ch-T1z"/>
+                                    <constraint firstAttribute="height" constant="10" id="wBG-Dt-cPL"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jju-dG-bfH" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="GMF-Zo-feu"/>
+                            <constraint firstItem="cA0-SW-iPl" firstAttribute="centerX" secondItem="Jju-dG-bfH" secondAttribute="centerX" type="default" id="Pyh-X6-xuy"/>
+                            <constraint firstAttribute="bottom" secondItem="cA0-SW-iPl" secondAttribute="bottom" constant="78" id="XyW-b1-doI"/>
+                            <constraint firstItem="Jju-dG-bfH" firstAttribute="bottom" secondItem="5" secondAttribute="bottom" type="default" id="Zd5-OT-ACj"/>
+                            <constraint firstItem="Jju-dG-bfH" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="fKF-d3-e9V"/>
+                            <constraint firstItem="Jju-dG-bfH" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="xMe-I4-B14"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6fO-W9-LG7"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="_imageEnter" destination="cA0-SW-iPl" id="V0A-cD-Wzo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="181" y="-208"/>
+        </scene>
+        <!--Sub Main View Controller-->
+        <scene sceneID="WFw-C2-Q5O">
+            <objects>
+                <viewController storyboardIdentifier="SubMainView" id="Ftz-dy-je8" customClass="SubMainViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fwP-6y-v4I">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwV-5M-KUK">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="BIL-D9-IzZ" kind="embed" id="KjD-Fx-sp9"/>
+                                </connections>
+                            </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="top.png" translatesAutoresizingMaskIntoConstraints="NO" id="P81-8F-SHB">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="hy8-XD-Cgw"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opm-zR-GDr" userLabel="bt企业简介">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="P7I-hI-dgs"/>
+                                    <constraint firstAttribute="width" constant="90" id="xld-yZ-wyJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="qiyejianjie.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btQiYeJianJie:" destination="Ftz-dy-je8" eventType="touchUpInside" id="ikP-EB-DEo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSX-da-n3y" userLabel="bt项目概述">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="OFB-OI-iRw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="xingmukaishu.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btXiangMuGaiShu:" destination="Ftz-dy-je8" eventType="touchUpInside" id="JVQ-5E-AlX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sln-nO-H4p">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="fZN-xc-sg8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="quyujiazhi.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7W-FW-rJM">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GzP-nh-rdH"/>
+                                    <constraint firstAttribute="width" constant="102" id="ysU-qD-bF3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="shejililian.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q14-xY-Cwu">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="7M0-Mm-jXD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="huxingzhanshi.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKJ-lT-w22">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="FcA-gJ-RWq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="wuyeguanli.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="z7W-FW-rJM" firstAttribute="bottom" secondItem="q14-xY-Cwu" secondAttribute="bottom" type="default" id="0b0-HU-qng"/>
+                            <constraint firstItem="mSX-da-n3y" firstAttribute="leading" secondItem="fwP-6y-v4I" secondAttribute="leading" constant="135" id="6fI-Jy-tg9"/>
+                            <constraint firstItem="pwV-5M-KUK" firstAttribute="bottom" secondItem="fwP-6y-v4I" secondAttribute="bottom" type="default" id="88y-1w-qcX"/>
+                            <constraint firstItem="pwV-5M-KUK" firstAttribute="top" secondItem="fwP-6y-v4I" secondAttribute="top" constant="101" id="ELM-9G-59f"/>
+                            <constraint firstAttribute="trailing" secondItem="q14-xY-Cwu" secondAttribute="trailing" constant="138" id="EhU-Pq-VfI"/>
+                            <constraint firstAttribute="trailing" secondItem="MKJ-lT-w22" secondAttribute="trailing" constant="27" id="FTb-sm-SWK"/>
+                            <constraint firstItem="P81-8F-SHB" firstAttribute="trailing" secondItem="fwP-6y-v4I" secondAttribute="trailing" type="default" id="I8v-xO-LFS"/>
+                            <constraint firstItem="z7W-FW-rJM" firstAttribute="top" secondItem="fwP-6y-v4I" secondAttribute="top" constant="27" id="MJM-wj-jZE"/>
+                            <constraint firstItem="MKJ-lT-w22" firstAttribute="bottom" secondItem="q14-xY-Cwu" secondAttribute="bottom" type="default" id="MSm-YN-oxj"/>
+                            <constraint firstItem="Opm-zR-GDr" firstAttribute="leading" secondItem="fwP-6y-v4I" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NtC-p1-4PH"/>
+                            <constraint firstAttribute="trailing" secondItem="z7W-FW-rJM" secondAttribute="trailing" constant="246" id="OhL-UT-xdS"/>
+                            <constraint firstItem="Sln-nO-H4p" firstAttribute="leading" secondItem="fwP-6y-v4I" secondAttribute="leading" constant="255" id="WC1-eK-8Zo"/>
+                            <constraint firstItem="P81-8F-SHB" firstAttribute="leading" secondItem="fwP-6y-v4I" secondAttribute="leading" type="default" id="WIS-nb-KFv"/>
+                            <constraint firstItem="Sln-nO-H4p" firstAttribute="bottom" secondItem="mSX-da-n3y" secondAttribute="bottom" type="default" id="YmM-Tn-nCf"/>
+                            <constraint firstItem="pwV-5M-KUK" firstAttribute="trailing" secondItem="fwP-6y-v4I" secondAttribute="trailing" type="default" id="Yp3-Sp-oot"/>
+                            <constraint firstItem="pwV-5M-KUK" firstAttribute="leading" secondItem="fwP-6y-v4I" secondAttribute="leading" type="default" id="aE3-nv-AL8"/>
+                            <constraint firstItem="mSX-da-n3y" firstAttribute="bottom" secondItem="Opm-zR-GDr" secondAttribute="bottom" type="default" id="dLQ-eU-jxd"/>
+                            <constraint firstItem="z7W-FW-rJM" firstAttribute="top" secondItem="q14-xY-Cwu" secondAttribute="top" type="default" id="dyV-X7-Ryt"/>
+                            <constraint firstItem="Opm-zR-GDr" firstAttribute="top" secondItem="fwP-6y-v4I" secondAttribute="top" constant="25" id="fmB-Wz-VC5"/>
+                            <constraint firstItem="P81-8F-SHB" firstAttribute="top" secondItem="fwP-6y-v4I" secondAttribute="top" type="default" id="guJ-MM-igh"/>
+                            <constraint firstItem="MKJ-lT-w22" firstAttribute="top" secondItem="q14-xY-Cwu" secondAttribute="top" type="default" id="sfn-bd-2s5"/>
+                            <constraint firstItem="mSX-da-n3y" firstAttribute="top" secondItem="Opm-zR-GDr" secondAttribute="top" type="default" id="x88-PR-Hei"/>
+                            <constraint firstItem="Sln-nO-H4p" firstAttribute="top" secondItem="mSX-da-n3y" secondAttribute="top" type="default" id="yQh-5Y-6SB"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="containerView" destination="pwV-5M-KUK" id="KzE-eY-ZhP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZM6-zS-FHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="690"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wax-UE-BBU">
+            <objects>
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="Wej-Dh-QMr" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xes-Aq-Z81">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="UTI-Qj-sQ9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBP-0S-PMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1020" y="-208"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1qJ-mW-Wl4">
+            <objects>
+                <viewController restorationIdentifier="QiYe" storyboardIdentifier="QiYe" id="BIL-D9-IzZ" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5Uh-UW-qA3">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2G4-dS-FKC">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="UOX-Sj-Pp3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button1">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2G4-dS-FKC" firstAttribute="top" secondItem="5Uh-UW-qA3" secondAttribute="top" constant="270" id="6JY-lK-Kho"/>
+                            <constraint firstItem="2G4-dS-FKC" firstAttribute="centerX" secondItem="5Uh-UW-qA3" secondAttribute="centerX" type="default" id="MUH-Nu-Rg5"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mCc-Gv-HMt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-346" y="1684"/>
+        </scene>
+        <!--XiangMu-->
+        <scene sceneID="RZQ-Mo-2ev">
+            <objects>
+                <viewController restorationIdentifier="XiangMu" storyboardIdentifier="XiangMu" id="NBb-a1-BHl" userLabel="XiangMu" customClass="XiangMuViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hiD-xn-yZc">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPO-KU-aNm">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="Gha-71-OBL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button2">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ZPO-KU-aNm" secondAttribute="bottom" constant="281" id="2SZ-lh-r5J"/>
+                            <constraint firstItem="ZPO-KU-aNm" firstAttribute="centerX" secondItem="hiD-xn-yZc" secondAttribute="centerX" type="default" id="Z6r-XE-1c1"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UR6-Pw-4Eo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="867" y="1605"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="enter.png" width="80" height="20"/>
+        <image name="huxingzhanshi.png" width="171" height="100"/>
+        <image name="main.jpg" width="2048" height="1536"/>
+        <image name="qiyejianjie.png" width="180" height="100"/>
+        <image name="quyujiazhi.png" width="160" height="100"/>
+        <image name="shejililian.png" width="261" height="100"/>
+        <image name="top.png" width="2048" height="280"/>
+        <image name="wuyeguanli.png" width="168" height="100"/>
+        <image name="xingmukaishu.png" width="180" height="100"/>
+    </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SubMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubMainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btQiYeJianJie:" candidateClass="UIButton"/>
+                <relationship kind="action" name="btXiangMuGaiShu:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="containerView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="_imageEnter" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="XiangMuViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/XiangMuViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
